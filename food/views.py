@@ -11,7 +11,14 @@ def index(request):
         "item_list" :item_list,
 
     }
-    return HttpResponse(template.render(context, request))
+    return render(request, 'food/index.html', context)
 
-def items(request):
+def item(request):
     return HttpResponse("Hey items!")
+
+def detail( request, item_id):
+    itemone = Item.objects.get(pk = item_id)
+    context = {
+        'item':item,
+    }
+    return render(request, 'food/detail.html', context)
