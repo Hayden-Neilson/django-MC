@@ -32,4 +32,4 @@ def create_item(request):
         form.save()
         return redirect('food:index')
 
-    return render(request, 'form/item-form', ('form:form')) 
+    return render(request, 'form/item-form.html', {'form':form}) 
