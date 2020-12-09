@@ -33,3 +33,5 @@ def create_item(request):
         return redirect('food:index')
 
     return render(request, 'form/item-form.html', {'form':form}) 
+
+def update_item(request)
